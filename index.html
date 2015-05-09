@@ -1,39 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="primerApp">
     <head>
         <title>ANGULAR</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-           <h1>ANGULARJS</h1>
-           <h2>ANGULARJS</h2>
-           <h2>ANGULARJS</h2>
-           <h2>ANGULARJS</h2>
-           <h2>ANGULARJS</h2>
-           
-           
-           
-           
-           
-           
-           
-           
-           <h3>ANGULARJS</h3>
-           
-           
+    <body ng-controller="PrimerCtrl">
         
-           <h4>ANGULARJS</h4>
-           
-           
-           
-           
-           
-         
-           
-           <p>Ejemplo de uso de Angular Js</p>
-           <p>Editando angularjs hola</p>
-           <p>Editado desde la web editado desde netbeans</p>
-           
+        <ul ng-repeat="item in lista">
+            <li>
+            <span>{{item.id}}</span> <br>
+            <span><b>{{item.name}}</b></span>
+            </li>
+        </ul>
+        
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular.min.js.map" type="text/javascript"></script>
+        <script type="text/javascript">
+            
+        var primerApp = angular.module('primerApp', []);
+
+        primerApp.controller('PrimerCtrl', function($scope) {
+            $scope.lista = [{
+                'id': 1,
+                'name': "Juan"
+            }, {
+                'id': 2,
+                'name': "María"
+            }];
+        });
+
+        </script>
     </body>
 </html>
